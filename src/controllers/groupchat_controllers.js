@@ -131,7 +131,7 @@ export async function updateGroupChatById({groupId, message, sender}){
                 message:"Something went wrong while pushing a message in the group!",
             }
         }
-        console.log(updateGroupchat)
+        // console.log(updateGroupchat)
     
         return {
             message:"updated group-chat",
@@ -152,7 +152,7 @@ export async function getGroupChatByGroupId(req,res){
         const {groupId} = req.body;
 
         const existingChat = await Groupchat.findById(groupId);
-        console.log(existingChat);
+        // console.log(existingChat);
         if(!existingChat){
             return res.status(404).json({
                 message:"no such group-chat exist",

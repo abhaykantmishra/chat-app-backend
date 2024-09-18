@@ -73,7 +73,7 @@ export async function getUser(req, res) {
 export async function getAllUsers(req,res){
   try {  
     const allUsers = await User.find();
-    console.log(allUsers);
+    // console.log(allUsers);
     return res.status(200).json({
       message:"Got all users",
       allUsers:allUsers,

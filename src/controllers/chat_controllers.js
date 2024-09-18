@@ -192,9 +192,9 @@ export async function updateChatByChatId({chatId , message , sender}){
                 message:"Provide all required field!"
             }
         }
-        console.log(chatId, message , sender);
+        // console.log(chatId, message , sender);
         const existingChat = await Chat.findById(chatId);
-        console.log(existingChat);
+        // console.log(existingChat);
         if(!existingChat){
             return {
                 message:"no such chat exist"
@@ -268,7 +268,7 @@ export async function getChatById(req,res){
         const {chatId} = req.body;
 
         const existingChat = await Chat.findById(chatId);
-        console.log(existingChat);
+        // console.log(existingChat);
         if(!existingChat){
             return res.status(404).json({
                 message:"no such chat exist",

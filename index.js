@@ -45,15 +45,17 @@ try {
 const io = new Server(server, {
     pingTimeout: 10,
     cors: {
-        origin: `${process.env.FRONTEND_URI}`,
+        origin: `*`,
         methods: ["GET", "POST"]
     },
 })
 
+// app.get()
+
 io.on("connection", (socket) => {
 
-    // console.log("User connected");
-    // console.log("ID:", socket.id)
+    console.log("User connected");
+    console.log("ID:", socket.id)
 
     socket.on('join_room', ({ roomId, userId }) => {
         socket.join(roomId) // join a unique room
